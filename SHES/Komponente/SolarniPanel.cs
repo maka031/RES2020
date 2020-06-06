@@ -8,5 +8,6 @@ namespace Komponente
 {
     public class SolarniPanel
     {
+
     }
 }
