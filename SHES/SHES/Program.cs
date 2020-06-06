@@ -37,7 +37,9 @@ namespace SHES
                         dp.ShowDialog();
 
                         break;
-
+                    case 3:
+                        Application.Exit();
+                        break;
                     default:
                         break;
                 }
