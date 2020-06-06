@@ -4,15 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SHES
+namespace Komponente
 {
-    class Program
+    class Baterija
     {
-        static void Main(string[] args)
-        {
-            
-
-         
-        }
     }
 }
