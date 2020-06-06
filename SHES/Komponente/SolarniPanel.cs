@@ -8,5 +8,20 @@ namespace Komponente
 {
     public class SolarniPanel
     {
+        private string ime;
+        private int maxSnaga; 
+
+        public int MaxSnaga { get => maxSnaga; set => maxSnaga = value; }
+        public string Ime { get => ime; set => ime = value; }
+
+        public SolarniPanel()
+        {
+
+        }
+        public SolarniPanel(string i, int ms)
+        {
+            Ime = i;
+            MaxSnaga = ms;
+        }
     }
 }
