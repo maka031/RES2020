@@ -13,25 +13,34 @@ namespace SHES
         
         static void Main(string[] args)
         {
-            
-
-            string pom = "";
-
-            Console.WriteLine("Izaberite opciju:");
-            pom = Console.ReadLine();
-            int x = Int32.Parse(pom);
-
-            Console.WriteLine("1. Dodaj novi panel");
-            Console.WriteLine("2. Dodaj bateriju");
-            Console.WriteLine("3. Izlaz");
-
-            switch (x)
+            while (true)
             {
-                case 1:
-                    break;
 
-                default:
-                    break;
+
+                string pom = "";
+
+
+                Console.WriteLine("Izaberite opciju:");
+                Console.WriteLine("1. Dodaj novi panel");
+                Console.WriteLine("2. Dodaj bateriju");
+                Console.WriteLine("3. Izlaz");
+                pom = Console.ReadLine();
+                int x = Int32.Parse(pom);
+
+
+
+                switch (x)
+                {
+                    case 1:
+                        dodavanjePanelaForm dp = new dodavanjePanelaForm();
+
+                        dp.ShowDialog();
+
+                        break;
+
+                    default:
+                        break;
+                }
             }
 
 
