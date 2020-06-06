@@ -41,6 +41,7 @@ namespace DodavanjePanela
                 textBoxIme.Text = "";
                 textBoxIme.Focus();
             }
+            
             else
             {
                 using(SqlConnection connection = new SqlConnection(connectionString))
