@@ -39,9 +39,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(49, 27);
+            this.label1.Location = new System.Drawing.Point(37, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.Size = new System.Drawing.Size(102, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ime panela:";
             // 
@@ -49,48 +50,53 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(49, 65);
+            this.label2.Location = new System.Drawing.Point(37, 53);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(246, 25);
+            this.label2.Size = new System.Drawing.Size(222, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Maksimalna snaga panela:";
             // 
             // textBoxIme
             // 
-            this.textBoxIme.Location = new System.Drawing.Point(169, 31);
+            this.textBoxIme.Location = new System.Drawing.Point(143, 25);
+            this.textBoxIme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxIme.Multiline = true;
             this.textBoxIme.Name = "textBoxIme";
-            this.textBoxIme.Size = new System.Drawing.Size(132, 23);
+            this.textBoxIme.Size = new System.Drawing.Size(100, 19);
             this.textBoxIme.TabIndex = 2;
             // 
             // textBoxSnaga
             // 
-            this.textBoxSnaga.Location = new System.Drawing.Point(306, 69);
+            this.textBoxSnaga.Location = new System.Drawing.Point(263, 57);
+            this.textBoxSnaga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxSnaga.Multiline = true;
             this.textBoxSnaga.Name = "textBoxSnaga";
-            this.textBoxSnaga.Size = new System.Drawing.Size(132, 23);
+            this.textBoxSnaga.Size = new System.Drawing.Size(100, 19);
             this.textBoxSnaga.TabIndex = 3;
             // 
             // dodajButton
             // 
-            this.dodajButton.Location = new System.Drawing.Point(326, 392);
+            this.dodajButton.Location = new System.Drawing.Point(244, 318);
+            this.dodajButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dodajButton.Name = "dodajButton";
-            this.dodajButton.Size = new System.Drawing.Size(112, 46);
+            this.dodajButton.Size = new System.Drawing.Size(84, 37);
             this.dodajButton.TabIndex = 4;
             this.dodajButton.Text = "Dodaj";
             this.dodajButton.UseVisualStyleBackColor = true;
-            this.dodajButton.Click += new System.EventHandler(this.button1_Click);
+            this.dodajButton.Click += new System.EventHandler(this.dodavanjePanela_Click);
             // 
             // dodavanjePanelaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.dodajButton);
             this.Controls.Add(this.textBoxSnaga);
             this.Controls.Add(this.textBoxIme);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "dodavanjePanelaForm";
             this.Text = "Dodavanje panela";
             this.ResumeLayout(false);

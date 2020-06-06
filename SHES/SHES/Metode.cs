@@ -11,7 +11,6 @@ namespace SHES
     {
         public void TrenutnaSnagaPanela()
         {
-            
         }
     }
 }

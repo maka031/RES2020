@@ -1,16 +1,20 @@
-﻿using System;
+﻿using DodavanjePanela;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 namespace SHES
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
+            
+
             string pom = "";
 
             Console.WriteLine("Izaberite opciju:");
@@ -24,6 +28,7 @@ namespace SHES
             switch (x)
             {
                 case 1:
+                    break;
 
                 default:
                     break;
