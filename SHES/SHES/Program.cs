@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SnagaSunca;
 
 namespace SHES
 {
@@ -23,7 +24,8 @@ namespace SHES
                 Console.WriteLine("Izaberite opciju:");
                 Console.WriteLine("1. Dodaj novi panel");
                 Console.WriteLine("2. Dodaj bateriju");
-                Console.WriteLine("3. Izlaz");
+                Console.WriteLine("3. Izmeni snagu sunca:");
+                Console.WriteLine("4. Izlaz");
                 pom = Console.ReadLine();
                 int x = Int32.Parse(pom);
 
@@ -37,7 +39,15 @@ namespace SHES
                         dp.ShowDialog();
 
                         break;
+                    case 2:
+                        break;
                     case 3:
+                        Metode m = new Metode();
+                        SnagaSuncaForm ss = new SnagaSuncaForm();
+                        ss.ShowDialog();
+                        
+                        break;
+                    case 4:
                         Application.Exit();
                         break;
                     default:

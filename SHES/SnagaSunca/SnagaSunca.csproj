@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{689391EA-12D1-4C0D-A406-39D4CFA53852}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>SHES</RootNamespace>
-    <AssemblyName>SHES</AssemblyName>
+    <ProjectGuid>{B4BF74D9-4765-449F-A0B9-749EF297CD46}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SnagaSunca</RootNamespace>
+    <AssemblyName>SnagaSunca</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,39 +35,49 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Metode.cs" />
+    <Compile Include="SnagaSuncaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SnagaSuncaForm.Designer.cs">
+      <DependentUpon>SnagaSuncaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="SnagaSuncaForm.resx">
+      <DependentUpon>SnagaSuncaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DodavanjePanela\DodavanjePanela.csproj">
-      <Project>{6560173F-443E-4D43-B61A-606A2C51E054}</Project>
-      <Name>DodavanjePanela</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Funkcije\Funkcije.csproj">
-      <Project>{17146EE5-06AA-406A-8FBE-4B6E8CB85920}</Project>
-      <Name>Funkcije</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Komponente\Komponente.csproj">
-      <Project>{98b0f784-f699-479b-bbd7-7c7f09682abb}</Project>
-      <Name>Komponente</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SnagaSunca\SnagaSunca.csproj">
-      <Project>{b4bf74d9-4765-449f-a0b9-749ef297cd46}</Project>
-      <Name>SnagaSunca</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

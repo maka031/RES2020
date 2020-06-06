@@ -8,6 +8,6 @@ namespace Funkcije
 {
     public interface IMetode
     {
-        void TrenutnaSnagaPanela();
+        void TrenutnaSnagaPanela(int sSunca);
     }
 }
