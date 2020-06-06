@@ -10,8 +10,7 @@ namespace SHES
     {
         static void Main(string[] args)
         {
-            private string proba;
-        private string proba2;
+            
 
          
         }
