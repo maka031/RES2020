@@ -9,10 +9,12 @@ namespace Komponente
     public class SolarniPanel
     {
         private string ime;
-        private int maxSnaga; 
+        private int maxSnaga;
+        private string trenutnaSnaga;
 
         public int MaxSnaga { get => maxSnaga; set => maxSnaga = value; }
         public string Ime { get => ime; set => ime = value; }
+        public string TrenutnaSnaga { get => trenutnaSnaga; set => trenutnaSnaga = value; }
 
         public SolarniPanel()
         {
@@ -23,5 +25,6 @@ namespace Komponente
             Ime = i;
             MaxSnaga = ms;
         }
+
     }
 }
