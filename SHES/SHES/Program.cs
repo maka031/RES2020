@@ -10,6 +10,7 @@ namespace SHES
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
             while (true)
@@ -36,7 +37,9 @@ namespace SHES
                         dp.ShowDialog();
 
                         break;
-
+                    case 3:
+                        Application.Exit();
+                        break;
                     default:
                         break;
                 }
