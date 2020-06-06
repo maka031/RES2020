@@ -79,7 +79,7 @@
             this.dodajButton.TabIndex = 4;
             this.dodajButton.Text = "Dodaj";
             this.dodajButton.UseVisualStyleBackColor = true;
-            this.dodajButton.Click += new System.EventHandler(this.button1_Click);
+            this.dodajButton.Click += new System.EventHandler(this.dodavanjePanela_Click);
             // 
             // dodavanjePanelaForm
             // 

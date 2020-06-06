@@ -1,9 +1,10 @@
-﻿using System;
+﻿using DodavanjePanela;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 namespace SHES
 {
@@ -24,7 +25,11 @@ namespace SHES
             switch (x)
             {
                 case 1:
+                    dodavanjePanelaForm dp = new dodavanjePanelaForm();
 
+                    dp.Show();
+                    break;
+           
                 default:
                     break;
             }
