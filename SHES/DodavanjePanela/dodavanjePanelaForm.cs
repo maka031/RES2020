@@ -57,6 +57,7 @@ namespace DodavanjePanela
                         MessageBox.Show("Uspesno ste dodali panel", "Uspesno!", MessageBoxButtons.OK);
                         textBoxIme.Text = "";
                         textBoxSnaga.Text = "";
+                        this.Close();
                     }
                     catch (Exception)
                     {
@@ -66,6 +67,8 @@ namespace DodavanjePanela
                         
                     }
                 }
+
+                
             }
         }
     }
