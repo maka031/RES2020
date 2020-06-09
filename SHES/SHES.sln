@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnagaSunca", "SnagaSunca\Sn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DodavanjePotrosaca", "DodavanjePotrosaca\DodavanjePotrosaca.csproj", "{B112C312-A30A-40D4-A855-79F63A2159FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DodavanjeBaterije", "DodavanjeBaterije\DodavanjeBaterije.csproj", "{873B6C42-EF61-4354-ACB3-488CA729599F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{B112C312-A30A-40D4-A855-79F63A2159FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B112C312-A30A-40D4-A855-79F63A2159FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B112C312-A30A-40D4-A855-79F63A2159FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{873B6C42-EF61-4354-ACB3-488CA729599F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{873B6C42-EF61-4354-ACB3-488CA729599F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{873B6C42-EF61-4354-ACB3-488CA729599F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{873B6C42-EF61-4354-ACB3-488CA729599F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
