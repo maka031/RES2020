@@ -37,24 +37,27 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(29, 75);
+            this.label1.Location = new System.Drawing.Point(22, 61);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 25);
+            this.label1.Size = new System.Drawing.Size(120, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Snaga sunca:";
             // 
             // textBoxSunce
             // 
-            this.textBoxSunce.Location = new System.Drawing.Point(169, 79);
+            this.textBoxSunce.Location = new System.Drawing.Point(127, 64);
+            this.textBoxSunce.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxSunce.Name = "textBoxSunce";
-            this.textBoxSunce.Size = new System.Drawing.Size(100, 22);
+            this.textBoxSunce.Size = new System.Drawing.Size(76, 20);
             this.textBoxSunce.TabIndex = 1;
             // 
             // izmeniSunceButton
             // 
-            this.izmeniSunceButton.Location = new System.Drawing.Point(194, 153);
+            this.izmeniSunceButton.Location = new System.Drawing.Point(146, 124);
+            this.izmeniSunceButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.izmeniSunceButton.Name = "izmeniSunceButton";
-            this.izmeniSunceButton.Size = new System.Drawing.Size(107, 34);
+            this.izmeniSunceButton.Size = new System.Drawing.Size(80, 28);
             this.izmeniSunceButton.TabIndex = 2;
             this.izmeniSunceButton.Text = "Izmeni";
             this.izmeniSunceButton.UseVisualStyleBackColor = true;
@@ -62,12 +65,13 @@
             // 
             // SnagaSuncaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 211);
+            this.ClientSize = new System.Drawing.Size(398, 171);
             this.Controls.Add(this.izmeniSunceButton);
             this.Controls.Add(this.textBoxSunce);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SnagaSuncaForm";
             this.Text = "Izmena snage sunca";
             this.ResumeLayout(false);
