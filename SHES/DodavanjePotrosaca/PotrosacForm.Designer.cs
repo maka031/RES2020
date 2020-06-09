@@ -30,8 +30,8 @@
         {
             this.naslovLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxIme = new System.Windows.Forms.TextBox();
+            this.textBoxPotrosnja = new System.Windows.Forms.TextBox();
             this.dodajPotrosacButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -56,22 +56,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Ime:";
             // 
-            // textBox1
+            // textBoxIme
             // 
-            this.textBox1.Location = new System.Drawing.Point(164, 49);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 24);
-            this.textBox1.TabIndex = 3;
+            this.textBoxIme.Location = new System.Drawing.Point(164, 49);
+            this.textBoxIme.Multiline = true;
+            this.textBoxIme.Name = "textBoxIme";
+            this.textBoxIme.Size = new System.Drawing.Size(131, 24);
+            this.textBoxIme.TabIndex = 3;
             // 
-            // textBox2
+            // textBoxPotrosnja
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox2.Location = new System.Drawing.Point(164, 90);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 24);
-            this.textBox2.TabIndex = 4;
+            this.textBoxPotrosnja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBoxPotrosnja.Location = new System.Drawing.Point(164, 90);
+            this.textBoxPotrosnja.Multiline = true;
+            this.textBoxPotrosnja.Name = "textBoxPotrosnja";
+            this.textBoxPotrosnja.Size = new System.Drawing.Size(131, 24);
+            this.textBoxPotrosnja.TabIndex = 4;
             // 
             // dodajPotrosacButton
             // 
@@ -81,6 +81,7 @@
             this.dodajPotrosacButton.TabIndex = 5;
             this.dodajPotrosacButton.Text = "Dodaj";
             this.dodajPotrosacButton.UseVisualStyleBackColor = true;
+            this.dodajPotrosacButton.Click += new System.EventHandler(this.dodajPotrosacButton_Click);
             // 
             // label2
             // 
@@ -99,8 +100,8 @@
             this.ClientSize = new System.Drawing.Size(452, 262);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dodajPotrosacButton);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPotrosnja);
+            this.Controls.Add(this.textBoxIme);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.naslovLabel);
             this.Name = "PotrosacForm";
@@ -114,8 +115,8 @@
 
         private System.Windows.Forms.Label naslovLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxIme;
+        private System.Windows.Forms.TextBox textBoxPotrosnja;
         private System.Windows.Forms.Button dodajPotrosacButton;
         private System.Windows.Forms.Label label2;
     }

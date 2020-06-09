@@ -56,6 +56,10 @@
       <Project>{6560173F-443E-4D43-B61A-606A2C51E054}</Project>
       <Name>DodavanjePanela</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DodavanjePotrosaca\DodavanjePotrosaca.csproj">
+      <Project>{b112c312-a30a-40d4-a855-79f63a2159fa}</Project>
+      <Name>DodavanjePotrosaca</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Funkcije\Funkcije.csproj">
       <Project>{17146EE5-06AA-406A-8FBE-4B6E8CB85920}</Project>
       <Name>Funkcije</Name>
