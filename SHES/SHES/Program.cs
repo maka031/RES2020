@@ -40,7 +40,6 @@ namespace SHES
                         db.ShowDialog();
                         break;
                     case 3:
-                        Metode m = new Metode();
                         SnagaSuncaForm ss = new SnagaSuncaForm();
                         ss.ShowDialog();
                         break;

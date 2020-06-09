@@ -18,6 +18,7 @@ namespace DodavanjeBaterije
             InitializeComponent();
         }
 
+        
         string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BazaPodataka;Integrated Security=True";
 
         private void baterijaDodajButton_Click(object sender, EventArgs e)
