@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SnagaSunca;
 using DodavanjePotrosaca;
+using DodavanjeBaterije;
 
 namespace SHES
 {
@@ -35,7 +36,8 @@ namespace SHES
                         dp.ShowDialog();
                         break;
                     case 2:
-                        Console.WriteLine("Dodavanje baterije!");
+                        dodavanjeBaterijeForm db = new dodavanjeBaterijeForm();
+                        db.ShowDialog();
                         break;
                     case 3:
                         Metode m = new Metode();
