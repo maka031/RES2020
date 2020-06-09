@@ -16,7 +16,7 @@ namespace DodavanjeBaterije
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new dodavanjeBaterijeForm());
+            Application.Run(new Form1());
         }
     }
 }
