@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DodavanjeBaterije\DodavanjeBaterije.csproj">
-      <Project>{873b6c42-ef61-4354-acb3-488ca729599f}</Project>
+      <Project>{bbd3da97-6bbe-4054-8b75-9d05deac0731}</Project>
       <Name>DodavanjeBaterije</Name>
     </ProjectReference>
     <ProjectReference Include="..\DodavanjePanela\DodavanjePanela.csproj">

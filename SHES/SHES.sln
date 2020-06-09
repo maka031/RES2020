@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnagaSunca", "SnagaSunca\Sn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DodavanjePotrosaca", "DodavanjePotrosaca\DodavanjePotrosaca.csproj", "{B112C312-A30A-40D4-A855-79F63A2159FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DodavanjeBaterije", "DodavanjeBaterije\DodavanjeBaterije.csproj", "{3D8ACD85-1992-4EC3-A232-4E12C3984E5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DodavanjeBaterije", "DodavanjeBaterije\DodavanjeBaterije.csproj", "{BBD3DA97-6BBE-4054-8B75-9D05DEAC0731}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{B112C312-A30A-40D4-A855-79F63A2159FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B112C312-A30A-40D4-A855-79F63A2159FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B112C312-A30A-40D4-A855-79F63A2159FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3D8ACD85-1992-4EC3-A232-4E12C3984E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D8ACD85-1992-4EC3-A232-4E12C3984E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D8ACD85-1992-4EC3-A232-4E12C3984E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D8ACD85-1992-4EC3-A232-4E12C3984E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD3DA97-6BBE-4054-8B75-9D05DEAC0731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD3DA97-6BBE-4054-8B75-9D05DEAC0731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD3DA97-6BBE-4054-8B75-9D05DEAC0731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD3DA97-6BBE-4054-8B75-9D05DEAC0731}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

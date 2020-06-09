@@ -34,21 +34,26 @@ namespace SHES
                     case 1:
                         dodavanjePanelaForm dp = new dodavanjePanelaForm();
                         dp.ShowDialog();
+
                         break;
                     case 2:
                         dodavanjeBaterijeForm db = new dodavanjeBaterijeForm();
                         db.ShowDialog();
+
                         break;
                     case 3:
                         SnagaSuncaForm ss = new SnagaSuncaForm();
                         ss.ShowDialog();
+
                         break;
                     case 4:
                         PotrosacForm pf = new PotrosacForm();
                         pf.ShowDialog();
+
                         break;
                     case 5:
                         Application.Exit();
+
                         break;
                     default:
                         break;
