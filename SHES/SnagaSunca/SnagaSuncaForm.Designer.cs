@@ -47,7 +47,7 @@
             // textBoxSunce
             // 
             this.textBoxSunce.Location = new System.Drawing.Point(127, 64);
-            this.textBoxSunce.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSunce.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSunce.Name = "textBoxSunce";
             this.textBoxSunce.Size = new System.Drawing.Size(76, 20);
             this.textBoxSunce.TabIndex = 1;
@@ -55,7 +55,7 @@
             // izmeniSunceButton
             // 
             this.izmeniSunceButton.Location = new System.Drawing.Point(146, 124);
-            this.izmeniSunceButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.izmeniSunceButton.Margin = new System.Windows.Forms.Padding(2);
             this.izmeniSunceButton.Name = "izmeniSunceButton";
             this.izmeniSunceButton.Size = new System.Drawing.Size(80, 28);
             this.izmeniSunceButton.TabIndex = 2;
@@ -67,11 +67,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 171);
+            this.ClientSize = new System.Drawing.Size(514, 352);
             this.Controls.Add(this.izmeniSunceButton);
             this.Controls.Add(this.textBoxSunce);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SnagaSuncaForm";
             this.Text = "Izmena snage sunca";
             this.ResumeLayout(false);
