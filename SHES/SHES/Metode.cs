@@ -10,15 +10,24 @@ namespace SHES
 {
     public class Metode : IMetode
     {
-        public void dodavanjeBaterije(string i, int ms, int k)
+        public void dodavanjeBaterije()
         {
-            Baterija bat = new Baterija(i, ms, k);
+            Console.WriteLine("Unesite ime baterije:");
+            string baterijaIme = Console.ReadLine();
+
+            Console.WriteLine("Unesite maksimalnu snagu baterije:");
+            int maxSnaga = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Unesite kapacitet baterije:");
+            int kapacitet = Int32.Parse(Console.ReadLine());
+
+            Baterija bat = new Baterija(baterijaIme, maxSnaga, kapacitet);
 
             using (var db = new SHESContext())
             {
                 foreach (Baterija b in db.Baterije)
                 {
-                    if (!b.Ime.Equals(i))
+                    if (!b.Ime.Equals(baterijaIme))
                     {
                         db.Baterije.Add(b);
                         db.SaveChanges();
@@ -32,9 +41,15 @@ namespace SHES
             }
         }
 
-        public void dodavanjeSolarnogPanela(string i, int ms)
+        public void dodavanjeSolarnogPanela()
         {
-            SolarniPanel sp = new SolarniPanel(i, ms);
+            Console.WriteLine("Unesite ime panela: ");
+            string i = Console.ReadLine();
+
+            Console.WriteLine("Unesite maksimalnu snagu panela: ");
+            int snaga = Int32.Parse(Console.ReadLine());
+
+            SolarniPanel sp = new SolarniPanel(i, snaga);
 
             
             using (var db = new SHESContext())
