@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace Komponente
         public List<SolarniPanel> Paneli = new List<SolarniPanel>();
 
         public int MaxSnaga { get => maxSnaga; set => maxSnaga = value; }
+        [Key]
         public string Ime { get => ime; set => ime = value; }
         public int TrenutnaSnaga { get => trenutnaSnaga; set => trenutnaSnaga = value; }
 
