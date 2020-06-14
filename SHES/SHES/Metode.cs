@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Komponente;
+using System.Threading;
 
 namespace SHES
 {
@@ -12,80 +13,78 @@ namespace SHES
     {
         public void dodavanjeBaterije()
         {
+
+            SHESContext sc = new SHESContext();
+
+
             Console.WriteLine("Unesite ime baterije:");
             string baterijaIme = Console.ReadLine();
 
-            Console.WriteLine("Unesite maksimalnu snagu baterije:");
-            int maxSnaga = Int32.Parse(Console.ReadLine());
+            var pomocni = sc.Baterije.Find(baterijaIme);
 
-            Console.WriteLine("Unesite kapacitet baterije:");
-            int kapacitet = Int32.Parse(Console.ReadLine());
-
-            Baterija bat = new Baterija(baterijaIme, maxSnaga, kapacitet);
-
-            using (var db = new SHESContext())
+            if (pomocni != null)
             {
-                foreach (Baterija b in db.Baterije)
+                Console.WriteLine("Baterija sa tim imenom vec postoji!");
+            }
+            else
+            {
+                Console.WriteLine("Unesite maksimalnu snagu baterije:");
+                int maxSnaga = Int32.Parse(Console.ReadLine());
+
+                Console.WriteLine("Unesite kapacitet baterije:");
+                int kapacitet = Int32.Parse(Console.ReadLine());
+
+                Baterija bat = new Baterija(baterijaIme, maxSnaga, kapacitet);
+
+                using (var db = new SHESContext())
                 {
-                    if (!b.Ime.Equals(baterijaIme))
-                    {
-                        db.Baterije.Add(b);
-                        db.SaveChanges();
-                        Console.WriteLine("Baterija " + bat.Ime + " dodata u sistem");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Baterija sa tim imenom vec postoji!");
-                    }
+                     db.Baterije.Add(bat);
+                     db.SaveChanges();
+                     Console.WriteLine("Baterija " + bat.Ime + " dodata u sistem");
                 }
             }
+
         }
 
         public void dodavanjePotrosaca()
         {
+
+            SHESContext sc = new SHESContext();
+
             Console.WriteLine("Unesite ime potrosaca: ");
             string ip = Console.ReadLine();
-            if (System.Text.RegularExpressions.Regex.IsMatch(ip, "^[0-9]"))
+
+            var pomocni = sc.Potrosaci.Find(ip);
+
+            if (pomocni != null)
             {
-                Console.WriteLine("Neispravan unos imena!");
+                Console.WriteLine("Potrosac sa tim imenom vec postoji!");
             }
-
-            Console.WriteLine("Unesite potrosnju: ");
-            int pp = Int32.Parse(Console.ReadLine());
-            if (!System.Text.RegularExpressions.Regex.IsMatch(pp.ToString(), "^[0-9]"))
+            else
             {
-                Console.WriteLine("Neispravan unos potrosnje!");
-            }
+                Console.WriteLine("Unesite potrosnju: ");
+                int pp = Int32.Parse(Console.ReadLine());
 
-            Potrosac potrosac = new Potrosac(ip, pp);
+                Potrosac potrosac = new Potrosac(ip, pp);
 
-            using (var db = new SHESContext())
-            {
-                foreach (Potrosac p in db.Potrosaci)
+                using (var db = new SHESContext())
                 {
-                    if (!p.Ime.Equals(potrosac.Ime))
-                    {
+                    db.Potrosaci.Add(potrosac);
+                    db.SaveChanges();
+                    Console.WriteLine("Potrosac " + potrosac.Ime + " dodat u sistem");
 
-                        db.Potrosaci.Add(p);
-                        db.SaveChanges();
-                        Console.WriteLine("Potrosac " + p.Ime + " dodat u sistem");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Potrosac sa tim imenom vec postoji!");
-                    }
                 }
             }
         }
+    
+
+    
 
         public void dodavanjeSolarnogPanela()
         {
           
             SHESContext sc = new SHESContext();
-            List<SolarniPanel> paneli = new List<SolarniPanel>();
-
-            paneli = sc.Paneli.ToList<SolarniPanel>();
-
+            
             Console.WriteLine("Unesite ime panela: ");
             string imePanela = Console.ReadLine();
 
@@ -116,6 +115,8 @@ namespace SHES
             
         public void snagaSunca()
         {
+           // Thread.Sleep(1000);
+
             SHESContext sc = new SHESContext();
             List<SolarniPanel> paneli = new List<SolarniPanel>();
 
