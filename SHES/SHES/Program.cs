@@ -52,7 +52,7 @@ namespace SHES
 
                         break;
                     case 5:
-                        Application.Exit();
+                        System.Environment.Exit(0);
 
                         break;
                     default:

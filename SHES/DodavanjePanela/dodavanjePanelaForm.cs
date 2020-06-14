@@ -41,7 +41,13 @@ namespace DodavanjePanela
                 textBoxIme.Text = "";
                 textBoxIme.Focus();
             }
-            
+            else if (Int32.Parse(textBoxSnaga.Text) < 0)
+            {
+                MessageBox.Show("Snaga mora biti pozitivan broj!", "GRESKA!", MessageBoxButtons.OK);
+                textBoxSnaga.Text = "";
+                textBoxSnaga.Focus();
+            }
+
             else
             {
                 using(SqlConnection connection = new SqlConnection(connectionString))
@@ -54,6 +60,7 @@ namespace DodavanjePanela
                     try
                     {
                         komandaDodavanje.ExecuteNonQuery();
+                        sqlre
                         MessageBox.Show("Uspesno ste dodali panel", "Uspesno!", MessageBoxButtons.OK);
                         textBoxIme.Text = "";
                         textBoxSnaga.Text = "";
