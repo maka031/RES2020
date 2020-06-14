@@ -12,7 +12,6 @@ namespace SHES
         
         static void Main(string[] args)
         {
-            
             while (true)
             {
                 string pom;
@@ -27,8 +26,8 @@ namespace SHES
                 Console.WriteLine("0. Izlaz");
                 pom = Console.ReadLine();
                 int x = Int32.Parse(pom);
-                
 
+                int proba = 0;
 
                 switch (x)
                 {
