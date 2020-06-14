@@ -45,7 +45,7 @@ namespace SHES
 
                         break;
                     case 4:
-                        
+                        m.dodavanjePotrosaca();
 
                         break;
                     case 0:
