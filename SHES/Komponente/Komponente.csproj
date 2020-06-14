@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Baterija.cs" />
+    <Compile Include="ElektroDistribucija.cs" />
     <Compile Include="IMetode.cs" />
     <Compile Include="Potrosac.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

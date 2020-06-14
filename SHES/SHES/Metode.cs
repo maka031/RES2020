@@ -82,9 +82,6 @@ namespace SHES
         {
           
             SHESContext sc = new SHESContext();
-            List<SolarniPanel> paneli = new List<SolarniPanel>();
-
-            paneli = sc.Paneli.ToList<SolarniPanel>();
 
             Console.WriteLine("Unesite ime panela: ");
             string imePanela = Console.ReadLine();
