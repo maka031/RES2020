@@ -10,15 +10,24 @@ namespace SHES
 {
     public class Metode : IMetode
     {
-        public void dodavanjeBaterije(string i, int ms, int k)
+        public void dodavanjeBaterije()
         {
-            Baterija bat = new Baterija(i, ms, k);
+            Console.WriteLine("Unesite ime baterije:");
+            string baterijaIme = Console.ReadLine();
+
+            Console.WriteLine("Unesite maksimalnu snagu baterije:");
+            int maxSnaga = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Unesite kapacitet baterije:");
+            int kapacitet = Int32.Parse(Console.ReadLine());
+
+            Baterija bat = new Baterija(baterijaIme, maxSnaga, kapacitet);
 
             using (var db = new SHESContext())
             {
                 foreach (Baterija b in db.Baterije)
                 {
-                    if (!b.Ime.Equals(i))
+                    if (!b.Ime.Equals(baterijaIme))
                     {
                         db.Baterije.Add(b);
                         db.SaveChanges();
@@ -69,9 +78,15 @@ namespace SHES
             }
         }
 
-        public void dodavanjeSolarnogPanela(string i, int ms)
+        public void dodavanjeSolarnogPanela()
         {
-            SolarniPanel sp = new SolarniPanel(i, ms);
+            Console.WriteLine("Unesite ime panela: ");
+            string i = Console.ReadLine();
+
+            Console.WriteLine("Unesite maksimalnu snagu panela: ");
+            int snaga = Int32.Parse(Console.ReadLine());
+
+            SolarniPanel sp = new SolarniPanel(i, snaga);
 
             
             using (var db = new SHESContext())
@@ -89,6 +104,34 @@ namespace SHES
                                
             }
 
+        }
+
+        public void snagaSunca()
+        {
+            SHESContext sc = new SHESContext();
+
+            foreach (SolarniPanel panel in sc.Paneli)
+            {
+                Console.WriteLine("Solarni panel:" + panel.Ime);
+
+            }
+            Console.WriteLine("Unesite ime panela kome zelite da promenite snagu sunca:");
+
+            string i = Console.ReadLine().ToString();
+
+            Console.WriteLine("Unesite snagu sunca za izabrani panel:");
+            int s = Int32.Parse(Console.ReadLine());
+
+            foreach (SolarniPanel panel in sc.Paneli)
+            {
+                if (panel.Ime.Equals(i))
+                {
+                    panel.TrenutnaSnaga = panel.MaxSnaga * s / 100;
+                    Console.WriteLine("Snaga sunca za panel " + panel.Ime + "je izmenjena." + Environment.NewLine + "Trenutna snaga panela:" + panel.TrenutnaSnaga);
+                }
+                else
+                    Console.WriteLine("Panel sa zadatim imenom ne postoji!");
+            }
         }
 
         public void trenutnaSnagaPanela(string ime, int snaga)
