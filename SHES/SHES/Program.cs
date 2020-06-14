@@ -29,23 +29,21 @@ namespace SHES
                 switch (x)
                 {
                     case 1:
-                        dodavanjePanelaForm dp = new dodavanjePanelaForm();
-                        dp.ShowDialog();
+                        Console.WriteLine("Unesite ime panela:");
+                        string i = Console.ReadLine();
+
 
                         break;
                     case 2:
-                        dodavanjeBaterijeForm db = new dodavanjeBaterijeForm();
-                        db.ShowDialog();
+                       
 
                         break;
                     case 3:
-                        SnagaSuncaForm ss = new SnagaSuncaForm();
-                        ss.ShowDialog();
+                        
 
                         break;
                     case 4:
-                        PotrosacForm pf = new PotrosacForm();
-                        pf.ShowDialog();
+                        
 
                         break;
                     case 5:
