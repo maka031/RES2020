@@ -13,6 +13,5 @@ namespace Komponente
         void snagaSunca();
         void dodavanjePotrosaca();
         void merenjeSnageSolarnihPanela();
-       
     }
 }

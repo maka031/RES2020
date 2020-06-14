@@ -12,13 +12,12 @@ namespace Komponente
         private string ime;
         private int maxSnaga;
         private int trenutnaSnaga;
-        private DateTime datumIzmene;
+
 
         public int MaxSnaga { get => maxSnaga; set => maxSnaga = value; }
         [Key]
         public string Ime { get => ime; set => ime = value; }
         public int TrenutnaSnaga { get => trenutnaSnaga; set => trenutnaSnaga = value; }
-        public DateTime DatumIzmene { get => datumIzmene; set => datumIzmene = value; }
 
         public SolarniPanel()
         {
@@ -28,6 +27,11 @@ namespace Komponente
         {
             Ime = i;
             MaxSnaga = ms;
+        }
+
+        public void merenjeSnagePanela()
+        {
+
         }
 
     }

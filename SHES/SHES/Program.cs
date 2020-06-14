@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using System.Timers;
 
 namespace SHES
 {
@@ -20,14 +18,14 @@ namespace SHES
                 string pom;
                 Metode m = new Metode();
 
-                Console.WriteLine("Izaberite opciju:");
+                Console.WriteLine("Izaberite opciju");
                 Console.WriteLine("1. Dodaj novi panel");
                 Console.WriteLine("2. Dodaj bateriju");
-                Console.WriteLine("3. Izmeni snagu sunca:");
-                Console.WriteLine("4. Dodaj potrosac:");
+                Console.WriteLine("3. Izmeni snagu sunca");
+                Console.WriteLine("4. Dodaj potrosac");
+                Console.WriteLine("5. Statistika panela");
                 Console.WriteLine("0. Izlaz");
                 pom = Console.ReadLine();
-                Thread t = new Thread(m.snagaSunca);
                 int x = Int32.Parse(pom);
                 
 
@@ -44,13 +42,14 @@ namespace SHES
                         break;
                     case 3:
                         m.snagaSunca();
-                        t.Start();
-                        
 
                         break;
                     case 4:
                         m.dodavanjePotrosaca();
 
+                        break;
+                    case 5:
+                        m.merenjeSnageSolarnihPanela();
                         break;
                     case 0:
                         System.Environment.Exit(0);
@@ -59,10 +58,18 @@ namespace SHES
                     default:
                         break;
                 }
+
+
+
             }
 
 
-
+            
         }
-    }
+        private static void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            Metode m = new Metode();
+            m.merenjeSnageSolarnihPanela();
+        }
+}
 }
