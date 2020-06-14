@@ -25,17 +25,32 @@ namespace SHES
                 Console.WriteLine("5. Izlaz");
                 pom = Console.ReadLine();
                 int x = Int32.Parse(pom);
+                Metode m = new Metode();
 
                 switch (x)
                 {
                     case 1:
-                        Console.WriteLine("Unesite ime panela:");
+                        Console.WriteLine("Unesite ime panela: ");
                         string i = Console.ReadLine();
+
+                        Console.WriteLine("Unesite maksimalnu snagu panela: ");
+                        int snaga = Int32.Parse(Console.ReadLine());
+
+                        m.dodavanjeSolarnogPanela(i, snaga);
 
 
                         break;
                     case 2:
-                       
+                        Console.WriteLine("Unesite ime baterije:");
+                        string baterijaIme = Console.ReadLine();
+
+                        Console.WriteLine("Unesite maksimalnu snagu baterije:");
+                        int maxSnaga = Int32.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Unesite kapacitet baterije:");
+                        int kapacitet = Int32.Parse(Console.ReadLine());
+
+                        m.dodavanjeBaterije(baterijaIme, maxSnaga, kapacitet);
 
                         break;
                     case 3:
