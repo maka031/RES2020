@@ -12,13 +12,13 @@ namespace Komponente
         private string ime;
         private int maxSnaga;
         private int trenutnaSnaga;
-
-        public List<SolarniPanel> Paneli = new List<SolarniPanel>();
+        private DateTime datumIzmene;
 
         public int MaxSnaga { get => maxSnaga; set => maxSnaga = value; }
         [Key]
         public string Ime { get => ime; set => ime = value; }
         public int TrenutnaSnaga { get => trenutnaSnaga; set => trenutnaSnaga = value; }
+        public DateTime DatumIzmene { get => datumIzmene; set => datumIzmene = value; }
 
         public SolarniPanel()
         {

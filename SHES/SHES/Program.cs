@@ -14,6 +14,7 @@ namespace SHES
         
         static void Main(string[] args)
         {
+            
             while (true)
             {
                 string pom;
@@ -28,7 +29,7 @@ namespace SHES
                 pom = Console.ReadLine();
                 Thread t = new Thread(m.snagaSunca);
                 int x = Int32.Parse(pom);
-
+                
 
 
                 switch (x)

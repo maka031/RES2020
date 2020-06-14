@@ -12,6 +12,7 @@ namespace Komponente
         void dodavanjeBaterije();
         void snagaSunca();
         void dodavanjePotrosaca();
+        void merenjeSnageSolarnihPanela();
        
     }
 }
