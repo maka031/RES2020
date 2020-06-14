@@ -12,6 +12,7 @@ namespace Komponente
         private bool stanjeBaterije;
         private int snagaPanela;
         private int cenaED;
+        private string proba;
 
         public bool StanjeBaterije { get => stanjeBaterije; set => stanjeBaterije = value; }
 
