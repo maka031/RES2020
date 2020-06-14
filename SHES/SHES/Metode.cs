@@ -14,37 +14,22 @@ namespace SHES
         {
             Console.WriteLine("Unesite ime baterije:");
             string baterijaIme = Console.ReadLine();
-            if (System.Text.RegularExpressions.Regex.IsMatch(baterijaIme, "^[0-9]"))
-            {
-                Console.WriteLine("Neispravan unos imena!");
-            }
 
             Console.WriteLine("Unesite maksimalnu snagu baterije:");
-            string maxSnaga = Console.ReadLine();
-            if (!Int32.TryParse(maxSnaga, out int a))
-            {
-                Console.WriteLine("Neispravan unos maksimalne snage!");
-
-            }
-
+            int maxSnaga = Int32.Parse(Console.ReadLine());
 
             Console.WriteLine("Unesite kapacitet baterije:");
-            string kapacitet = Console.ReadLine();
-            if (!Int32.TryParse(kapacitet, out int b))
-            {
-                Console.WriteLine("Neispravan unos kapaciteta!");
+            int kapacitet = Int32.Parse(Console.ReadLine());
 
-            }
-
-            Baterija bat = new Baterija(baterijaIme, a, b);
+            Baterija bat = new Baterija(baterijaIme, maxSnaga, kapacitet);
 
             using (var db = new SHESContext())
             {
-                foreach (Baterija bb in db.Baterije)
+                foreach (Baterija b in db.Baterije)
                 {
-                    if (!bb.Ime.Equals(baterijaIme))
+                    if (!b.Ime.Equals(baterijaIme))
                     {
-                        db.Baterije.Add(bb);
+                        db.Baterije.Add(b);
                         db.SaveChanges();
                         Console.WriteLine("Baterija " + bat.Ime + " dodata u sistem");
                     }
@@ -58,8 +43,6 @@ namespace SHES
 
         public void dodavanjePotrosaca()
         {
-            SHESContext db = new SHESContext();
-
             Console.WriteLine("Unesite ime potrosaca: ");
             string ip = Console.ReadLine();
             if (System.Text.RegularExpressions.Regex.IsMatch(ip, "^[0-9]"))
@@ -68,62 +51,50 @@ namespace SHES
             }
 
             Console.WriteLine("Unesite potrosnju: ");
-            string pp = Console.ReadLine();
-            if (!Int32.TryParse(pp, out int a))
+            int pp = Int32.Parse(Console.ReadLine());
+            if (!System.Text.RegularExpressions.Regex.IsMatch(pp.ToString(), "^[0-9]"))
             {
-                Console.WriteLine("Neispravan unos maksimalne snage!");
-
+                Console.WriteLine("Neispravan unos potrosnje!");
             }
 
-            Potrosac potrosac = new Potrosac(ip, a);
-            List<Potrosac> potrosaci = new List<Potrosac>();
-            potrosaci = db.Potrosaci.ToList<Potrosac>();
+            Potrosac potrosac = new Potrosac(ip, pp);
 
-            using (db)
+            using (var db = new SHESContext())
             {
-                for (int i = 0; i < potrosaci.Count; i++)
+                foreach (Potrosac p in db.Potrosaci)
                 {
-                    if (!potrosaci[i].Ime.Contains(ip))
+                    if (!p.Ime.Equals(potrosac.Ime))
                     {
-                        db.Potrosaci.Add(potrosac);
+
+                        db.Potrosaci.Add(p);
                         db.SaveChanges();
-                        Console.WriteLine("Potrosac  " + potrosac.Ime + "  dodat u sistem");
+                        Console.WriteLine("Potrosac " + p.Ime + " dodat u sistem");
                     }
                     else
                     {
                         Console.WriteLine("Potrosac sa tim imenom vec postoji!");
                     }
-                } 
-
+                }
             }
         }
-        
 
         public void dodavanjeSolarnogPanela()
         {
             Console.WriteLine("Unesite ime panela: ");
             string i = Console.ReadLine();
-            if (System.Text.RegularExpressions.Regex.IsMatch(i, "^[0-9]"))
-            {
-                Console.WriteLine("Neispravan unos imena!");
-            }
 
             Console.WriteLine("Unesite maksimalnu snagu panela: ");
-            string snaga = Console.ReadLine();
-            if(!Int32.TryParse(snaga, out int a))
-            {
-                Console.WriteLine("Neispravan unos maksimalne snage!");
+            int snaga = Int32.Parse(Console.ReadLine());
 
-            }
-           
-            SolarniPanel sp = new SolarniPanel(i, a);
+            SolarniPanel sp = new SolarniPanel(i, snaga);
 
-            
+
             using (var db = new SHESContext())
             {
-                 db.Paneli.Add(sp);
-                 db.SaveChanges();
-                 Console.WriteLine("Solarni panel" + sp.Ime + "uspesno dodat!");                               
+                db.Paneli.Add(sp);
+                db.SaveChanges();
+                Console.WriteLine("Solarni panel uspesno dodat!");
+
             }
 
         }
@@ -131,37 +102,43 @@ namespace SHES
         public void snagaSunca()
         {
             SHESContext sc = new SHESContext();
+            List<SolarniPanel> paneli = new List<SolarniPanel>();
 
-            foreach (SolarniPanel panel in sc.Paneli)
+            paneli = sc.Paneli.ToList<SolarniPanel>();
+
+            Console.WriteLine("LISTA PANELA");
+            for(int j = 0; j < paneli.Count; j++)
             {
-                Console.WriteLine("Solarni panel:" + panel.Ime);
-
+                Console.WriteLine("Panel: " + paneli[j].Ime);
             }
+            
+            
             Console.WriteLine("Unesite ime panela kome zelite da promenite snagu sunca:");
 
             string i = Console.ReadLine();
-            if (System.Text.RegularExpressions.Regex.IsMatch(i, "^[0-9]"))
-            {
-                Console.WriteLine("Neispravan unos imena!");
-            }
 
-            Console.WriteLine("Unesite snagu sunca za izabrani panel:");
-            int s = Int32.Parse(Console.ReadLine());
-            if (!System.Text.RegularExpressions.Regex.IsMatch(s.ToString(), "^[0-9]"))
-            {
-                Console.WriteLine("Neispravan unos maksimalne snage!");
-            }
+            int s = 0;
 
-            foreach (SolarniPanel panel in sc.Paneli)
+            for(int j = 0; j < paneli.Count; j++)
             {
-                if (panel.Ime.Equals(i))
+                if (paneli[j].Ime.Equals(i))
                 {
-                    panel.TrenutnaSnaga = panel.MaxSnaga * s / 100;
-                    Console.WriteLine("Snaga sunca za panel " + panel.Ime + "je izmenjena." + Environment.NewLine + "Trenutna snaga panela:" + panel.TrenutnaSnaga);
+                    Console.WriteLine("Panel pronadjen.");
+                    Console.WriteLine("Unesite snagu sunca za odabrani panel:");
+                    s = Int32.Parse(Console.ReadLine());
+
+                    paneli[j].TrenutnaSnaga = paneli[j].MaxSnaga * s / 100;
+
+                    Console.WriteLine("Panel: " + paneli[j].Ime + " Trenutna snaga:" + paneli[j].TrenutnaSnaga);
+                    
                 }
-                else
-                    Console.WriteLine("Panel sa zadatim imenom ne postoji!");
+                else if(!paneli[j].Ime.Equals(i))
+                {
+                    //Console.WriteLine("Panel sa trazenim imenom ne postoji");
+                    continue;
+                }
             }
+            
         }
 
         public void trenutnaSnagaPanela(string ime, int snaga)
