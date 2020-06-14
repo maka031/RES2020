@@ -88,20 +88,13 @@ namespace SHES
 
             SolarniPanel sp = new SolarniPanel(i, snaga);
 
-            
+
             using (var db = new SHESContext())
             {
-                foreach (SolarniPanel panel in db.Paneli)
-                {
-                    if (!panel.Ime.Equals(i))
-                    {
-                        db.Paneli.Add(sp);
-                        db.SaveChanges();
-                        Console.WriteLine("Solarni panel" + sp.Ime + "uspesno dodat!");
-                    }else
-                        Console.WriteLine("Panel sa zadatim imenom vec postoji!");
-                }
-                               
+                db.Paneli.Add(sp);
+                db.SaveChanges();
+                Console.WriteLine("Solarni panel uspesno dodat!");
+
             }
 
         }
@@ -109,29 +102,43 @@ namespace SHES
         public void snagaSunca()
         {
             SHESContext sc = new SHESContext();
+            List<SolarniPanel> paneli = new List<SolarniPanel>();
 
-            foreach (SolarniPanel panel in sc.Paneli)
+            paneli = sc.Paneli.ToList<SolarniPanel>();
+
+            Console.WriteLine("LISTA PANELA");
+            for(int j = 0; j < paneli.Count; j++)
             {
-                Console.WriteLine("Solarni panel:" + panel.Ime);
-
+                Console.WriteLine("Panel: " + paneli[j].Ime);
             }
+            
+            
             Console.WriteLine("Unesite ime panela kome zelite da promenite snagu sunca:");
 
-            string i = Console.ReadLine().ToString();
+            string i = Console.ReadLine();
 
-            Console.WriteLine("Unesite snagu sunca za izabrani panel:");
-            int s = Int32.Parse(Console.ReadLine());
+            int s = 0;
 
-            foreach (SolarniPanel panel in sc.Paneli)
+            for(int j = 0; j < paneli.Count; j++)
             {
-                if (panel.Ime.Equals(i))
+                if (paneli[j].Ime.Equals(i))
                 {
-                    panel.TrenutnaSnaga = panel.MaxSnaga * s / 100;
-                    Console.WriteLine("Snaga sunca za panel " + panel.Ime + "je izmenjena." + Environment.NewLine + "Trenutna snaga panela:" + panel.TrenutnaSnaga);
+                    Console.WriteLine("Panel pronadjen.");
+                    Console.WriteLine("Unesite snagu sunca za odabrani panel:");
+                    s = Int32.Parse(Console.ReadLine());
+
+                    paneli[j].TrenutnaSnaga = paneli[j].MaxSnaga * s / 100;
+
+                    Console.WriteLine("Panel: " + paneli[j].Ime + " Trenutna snaga:" + paneli[j].TrenutnaSnaga);
+                    
                 }
-                else
-                    Console.WriteLine("Panel sa zadatim imenom ne postoji!");
+                else if(!paneli[j].Ime.Equals(i))
+                {
+                    //Console.WriteLine("Panel sa trazenim imenom ne postoji");
+                    continue;
+                }
             }
+            
         }
 
         public void trenutnaSnagaPanela(string ime, int snaga)

@@ -16,7 +16,7 @@ namespace SHES
         {
             while (true)
             {
-                string pom = "";
+                string pom;
 
                 Console.WriteLine("Izaberite opciju:");
                 Console.WriteLine("1. Dodaj novi panel");
@@ -39,8 +39,7 @@ namespace SHES
 
                         break;
                     case 3:
-                        Thread t = new Thread(m.snagaSunca);
-                        t.Start();
+                        m.snagaSunca();
                         
 
                         break;
