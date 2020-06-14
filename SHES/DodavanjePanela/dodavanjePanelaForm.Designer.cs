@@ -33,6 +33,8 @@
             this.textBoxIme = new System.Windows.Forms.TextBox();
             this.textBoxSnaga = new System.Windows.Forms.TextBox();
             this.dodajButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxSnagaSunca = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -66,11 +68,11 @@
             // 
             // textBoxSnaga
             // 
-            this.textBoxSnaga.Location = new System.Drawing.Point(351, 70);
+            this.textBoxSnaga.Location = new System.Drawing.Point(301, 69);
             this.textBoxSnaga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSnaga.Multiline = true;
             this.textBoxSnaga.Name = "textBoxSnaga";
-            this.textBoxSnaga.Size = new System.Drawing.Size(132, 22);
+            this.textBoxSnaga.Size = new System.Drawing.Size(64, 22);
             this.textBoxSnaga.TabIndex = 3;
             // 
             // dodajButton
@@ -84,11 +86,32 @@
             this.dodajButton.UseVisualStyleBackColor = true;
             this.dodajButton.Click += new System.EventHandler(this.dodavanjePanela_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(51, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 25);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Snaga sunca:";
+            // 
+            // textBoxSnagaSunca
+            // 
+            this.textBoxSnagaSunca.Location = new System.Drawing.Point(191, 117);
+            this.textBoxSnagaSunca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxSnagaSunca.Multiline = true;
+            this.textBoxSnagaSunca.Name = "textBoxSnagaSunca";
+            this.textBoxSnagaSunca.Size = new System.Drawing.Size(60, 22);
+            this.textBoxSnagaSunca.TabIndex = 6;
+            // 
             // dodavanjePanelaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxSnagaSunca);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dodajButton);
             this.Controls.Add(this.textBoxSnaga);
             this.Controls.Add(this.textBoxIme);
@@ -109,6 +132,8 @@
         private System.Windows.Forms.TextBox textBoxIme;
         private System.Windows.Forms.TextBox textBoxSnaga;
         private System.Windows.Forms.Button dodajButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxSnagaSunca;
     }
 }
 
