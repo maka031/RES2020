@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace Komponente
         private int maxSnaga;
         private int kapacitet;
 
-
+        [Key]
         public string Ime { get => ime; set => ime = value; }
         public int MaxSnaga { get => maxSnaga; set => maxSnaga = value; }
         public int Kapacitet { get => kapacitet; set => kapacitet = value; }

@@ -11,6 +11,6 @@ namespace Komponente
         void dodavanjeSolarnogPanela(string i, int ms);
         void dodavanjeBaterije(string i, int ms, int snaga);
         void trenutnaSnagaPanela(string ime, int snaga);
-       
+        void dodavanjePotrosaca();
     }
 }

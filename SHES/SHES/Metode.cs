@@ -26,7 +26,44 @@ namespace SHES
                     }
                     else
                     {
-                        Console.WriteLine("Nemoguce dodati bateriju sa tim imenom!");
+                        Console.WriteLine("Baterija sa tim imenom vec postoji!");
+                    }
+                }
+            }
+        }
+
+        public void dodavanjePotrosaca()
+        {
+            Console.WriteLine("Unesite ime potrosaca: ");
+            string ip = Console.ReadLine();
+            if (System.Text.RegularExpressions.Regex.IsMatch(ip, "^[0-9]"))
+            {
+                Console.WriteLine("Neispravan unos imena!");
+            }
+
+            Console.WriteLine("Unesite potrosnju: ");
+            int pp = Int32.Parse(Console.ReadLine());
+            if (!System.Text.RegularExpressions.Regex.IsMatch(pp.ToString(), "^[0-9]"))
+            {
+                Console.WriteLine("Neispravan unos potrosnje!");
+            }
+
+            Potrosac potrosac = new Potrosac(ip, pp);
+
+            using (var db = new SHESContext())
+            {
+                foreach (Potrosac p in db.Potrosaci)
+                {
+                    if (!p.Ime.Equals(potrosac.Ime))
+                    {
+
+                        db.Potrosaci.Add(p);
+                        db.SaveChanges();
+                        Console.WriteLine("Potrosac " + p.Ime + " dodat u sistem");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Potrosac sa tim imenom vec postoji!");
                     }
                 }
             }
@@ -45,7 +82,7 @@ namespace SHES
                     {
                         db.Paneli.Add(sp);
                         db.SaveChanges();
-                        Console.WriteLine("Solarni panel uspesno dodat!");
+                        Console.WriteLine("Solarni panel" + sp.Ime + "uspesno dodat!");
                     }else
                         Console.WriteLine("Panel sa zadatim imenom vec postoji!");
                 }
