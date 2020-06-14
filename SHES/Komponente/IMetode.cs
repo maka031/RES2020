@@ -9,7 +9,7 @@ namespace Komponente
     public interface IMetode
     {
         void dodavanjeSolarnogPanela(string i, int ms);
-        void dodavanjeBaterije(string i, int k);
+        void dodavanjeBaterije(string i,int ms, int k);
        
     }
 }
