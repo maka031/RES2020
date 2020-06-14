@@ -50,12 +50,17 @@ namespace DodavanjePanela
 
             else
             {
-                using(SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    string dodavanjePanela = "INSERT INTO Panel(ime, maxSnaga)VALUES('" + textBoxIme.Text.ToString() + "','" + textBoxSnaga.Text.ToString() + "')";
+                    int trenutna_snaga;
+
+                    trenutna_snaga = Int32.Parse(textBoxSnaga.Text) * Int32.Parse(textBoxSnagaSunca.Text) / 100;
+
+                    string dodavanjePanela = "INSERT INTO Panel(ime, maxSnaga, trenutnaSnaga)VALUES('" + textBoxIme.Text.ToString() + "','" + textBoxSnaga.Text.ToString() + "','" + trenutna_snaga.ToString() + "')";
                     SqlCommand komandaDodavanje = new SqlCommand(dodavanjePanela, connection);
+
 
                     try
                     {
@@ -78,5 +83,7 @@ namespace DodavanjePanela
                 
             }
         }
+
+        
     }
 }

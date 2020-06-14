@@ -52,29 +52,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DodavanjeBaterije\DodavanjeBaterije.csproj">
-      <Project>{bbd3da97-6bbe-4054-8b75-9d05deac0731}</Project>
-      <Name>DodavanjeBaterije</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DodavanjePanela\DodavanjePanela.csproj">
-      <Project>{6560173F-443E-4D43-B61A-606A2C51E054}</Project>
-      <Name>DodavanjePanela</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DodavanjePotrosaca\DodavanjePotrosaca.csproj">
-      <Project>{b112c312-a30a-40d4-a855-79f63a2159fa}</Project>
-      <Name>DodavanjePotrosaca</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Funkcije\Funkcije.csproj">
-      <Project>{17146EE5-06AA-406A-8FBE-4B6E8CB85920}</Project>
-      <Name>Funkcije</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Komponente\Komponente.csproj">
       <Project>{98b0f784-f699-479b-bbd7-7c7f09682abb}</Project>
       <Name>Komponente</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SnagaSunca\SnagaSunca.csproj">
-      <Project>{b4bf74d9-4765-449f-a0b9-749ef297cd46}</Project>
-      <Name>SnagaSunca</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
