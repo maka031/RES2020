@@ -12,7 +12,24 @@ namespace SHES
     {
         public void dodavanjeBaterije(string i, int ms, int k)
         {
-            throw new NotImplementedException();
+            Baterija bat = new Baterija(i, ms, k);
+
+            using (var db = new SHESContext())
+            {
+                foreach (Baterija b in db.Baterije)
+                {
+                    if (!b.Ime.Equals(i))
+                    {
+                        db.Baterije.Add(b);
+                        db.SaveChanges();
+                        Console.WriteLine("Baterija " + bat.Ime + " dodata u sistem");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nemoguce dodati bateriju sa tim imenom!");
+                    }
+                }
+            }
         }
 
         public void dodavanjeSolarnogPanela(string i, int ms)

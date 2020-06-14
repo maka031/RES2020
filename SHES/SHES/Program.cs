@@ -22,7 +22,7 @@ namespace SHES
                 Console.WriteLine("2. Dodaj bateriju");
                 Console.WriteLine("3. Izmeni snagu sunca:");
                 Console.WriteLine("4. Dodaj potrosac:");
-                Console.WriteLine("5. Izlaz");
+                Console.WriteLine("0. Izlaz");
                 pom = Console.ReadLine();
                 int x = Int32.Parse(pom);
                 Metode m = new Metode();
@@ -61,7 +61,7 @@ namespace SHES
                         
 
                         break;
-                    case 5:
+                    case 0:
                         System.Environment.Exit(0);
 
                         break;
