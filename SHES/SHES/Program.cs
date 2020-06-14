@@ -17,6 +17,7 @@ namespace SHES
             while (true)
             {
                 string pom;
+                Metode m = new Metode();
 
                 Console.WriteLine("Izaberite opciju:");
                 Console.WriteLine("1. Dodaj novi panel");
@@ -25,8 +26,10 @@ namespace SHES
                 Console.WriteLine("4. Dodaj potrosac:");
                 Console.WriteLine("0. Izlaz");
                 pom = Console.ReadLine();
+                Thread t = new Thread(m.snagaSunca);
                 int x = Int32.Parse(pom);
-                Metode m = new Metode();
+
+
 
                 switch (x)
                 {
@@ -40,6 +43,7 @@ namespace SHES
                         break;
                     case 3:
                         m.snagaSunca();
+                        t.Start();
                         
 
                         break;

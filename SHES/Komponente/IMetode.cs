@@ -10,7 +10,6 @@ namespace Komponente
     {
         void dodavanjeSolarnogPanela();
         void dodavanjeBaterije();
-        void trenutnaSnagaPanela(string ime, int snaga);
         void snagaSunca();
         void dodavanjePotrosaca();
        

@@ -80,25 +80,40 @@ namespace SHES
 
         public void dodavanjeSolarnogPanela()
         {
+          
+            SHESContext sc = new SHESContext();
+            List<SolarniPanel> paneli = new List<SolarniPanel>();
+
+            paneli = sc.Paneli.ToList<SolarniPanel>();
+
             Console.WriteLine("Unesite ime panela: ");
-            string i = Console.ReadLine();
+            string imePanela = Console.ReadLine();
 
-            Console.WriteLine("Unesite maksimalnu snagu panela: ");
-            int snaga = Int32.Parse(Console.ReadLine());
+            var pomocni = sc.Paneli.Find(imePanela);
 
-            SolarniPanel sp = new SolarniPanel(i, snaga);
-
-
-            using (var db = new SHESContext())
+            if (pomocni != null)
             {
-                db.Paneli.Add(sp);
-                db.SaveChanges();
-                Console.WriteLine("Solarni panel uspesno dodat!");
+                Console.WriteLine("Panel sa zadatim imenom vec postoji u bazi!");
+               
+            }
+            else
+            {
+                Console.WriteLine("unesite maksimalnu snagu panela");
+                int s = Int32.Parse(Console.ReadLine());
 
+                SolarniPanel sp = new SolarniPanel(imePanela, s);
+
+                using (var db = new SHESContext())
+                {
+                    db.Paneli.Add(sp);
+                    db.SaveChanges();
+                    Console.WriteLine("Panel uspesno dodat");
+
+                }
             }
 
         }
-
+            
         public void snagaSunca()
         {
             SHESContext sc = new SHESContext();
@@ -121,7 +136,9 @@ namespace SHES
 
             for(int j = 0; j < paneli.Count; j++)
             {
-                if (paneli[j].Ime.Equals(i))
+                if (!paneli[j].Ime.Equals(i))
+                    continue;
+                else
                 {
                     Console.WriteLine("Panel pronadjen.");
                     Console.WriteLine("Unesite snagu sunca za odabrani panel:");
@@ -130,20 +147,12 @@ namespace SHES
                     paneli[j].TrenutnaSnaga = paneli[j].MaxSnaga * s / 100;
 
                     Console.WriteLine("Panel: " + paneli[j].Ime + " Trenutna snaga:" + paneli[j].TrenutnaSnaga);
-                    
+
                 }
-                else if(!paneli[j].Ime.Equals(i))
-                {
-                    //Console.WriteLine("Panel sa trazenim imenom ne postoji");
-                    continue;
-                }
+                
             }
             
         }
 
-        public void trenutnaSnagaPanela(string ime, int snaga)
-        {
-            
-        }
     }
 }
