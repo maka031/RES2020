@@ -77,9 +77,6 @@ namespace SHES
             }
         }
     
-
-    
-
         public void dodavanjeSolarnogPanela()
         {
           
@@ -104,6 +101,7 @@ namespace SHES
 
                 using (var db = new SHESContext())
                 {
+                    sp.TrenutnaSnaga = sp.MaxSnaga * 1;
                     db.Paneli.Add(sp);
                     db.SaveChanges();
                     Console.WriteLine("Panel uspesno dodat");
@@ -112,7 +110,31 @@ namespace SHES
             }
 
         }
+
+        public void merenjeSnageSolarnihPanela()
+        {
+            SHESContext sc = new SHESContext();
+            List<SolarniPanel> panels = new List<SolarniPanel>();
+            panels = sc.Paneli.ToList<SolarniPanel>();
+
+            Podaci p = new Podaci();
+
             
+
+            using (var db = new SHESContext())
+            {
+                db.Podaci.Add(p);
+            }
+
+            for (int i = 0; i < p.Paneli.Count; i++)
+            {
+                Console.WriteLine("Panel: " + p.Paneli[i].Ime + " Trenutna snaga:" + p.Paneli[i].TrenutnaSnaga);
+            }
+
+            
+
+        }
+
         public void snagaSunca()
         {
            // Thread.Sleep(1000);

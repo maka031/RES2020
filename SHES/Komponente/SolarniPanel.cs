@@ -13,7 +13,6 @@ namespace Komponente
         private int maxSnaga;
         private int trenutnaSnaga;
 
-        public List<SolarniPanel> Paneli = new List<SolarniPanel>();
 
         public int MaxSnaga { get => maxSnaga; set => maxSnaga = value; }
         [Key]
@@ -28,6 +27,11 @@ namespace Komponente
         {
             Ime = i;
             MaxSnaga = ms;
+        }
+
+        public void merenjeSnagePanela()
+        {
+
         }
 
     }

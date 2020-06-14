@@ -13,5 +13,6 @@ namespace SHES
         public DbSet<SolarniPanel> Paneli { get; set; }
         public DbSet<Baterija> Baterije { get; set; }
         public DbSet<Potrosac> Potrosaci { get; set; }
+        public DbSet<Podaci> Podaci { get; set; }
     }
 }
