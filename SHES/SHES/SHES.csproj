@@ -56,9 +56,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Metode.cs" />
-    <Compile Include="Migrations\202006142309033_BazaPodataka.cs" />
-    <Compile Include="Migrations\202006142309033_BazaPodataka.designer.cs">
-      <DependentUpon>202006142309033_BazaPodataka.cs</DependentUpon>
+    <Compile Include="Migrations\202006142233518_InitialCreate.cs" />
+    <Compile Include="Migrations\202006142233518_InitialCreate.designer.cs">
+      <DependentUpon>202006142233518_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006142250459_BazaPodataka.cs" />
+    <Compile Include="Migrations\202006142250459_BazaPodataka.designer.cs">
+      <DependentUpon>202006142250459_BazaPodataka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006142356315_Ukupna snaga.cs" />
+    <Compile Include="Migrations\202006142356315_Ukupna snaga.designer.cs">
+      <DependentUpon>202006142356315_Ukupna snaga.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -76,8 +84,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006142309033_BazaPodataka.resx">
-      <DependentUpon>202006142309033_BazaPodataka.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006142233518_InitialCreate.resx">
+      <DependentUpon>202006142233518_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006142250459_BazaPodataka.resx">
+      <DependentUpon>202006142250459_BazaPodataka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006142356315_Ukupna snaga.resx">
+      <DependentUpon>202006142356315_Ukupna snaga.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
