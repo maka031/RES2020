@@ -18,5 +18,8 @@ namespace Komponente
         [Key]
         public int CenaED { get => cenaED; set => cenaED = value; }
         public int SnagaPanela { get => snagaPanela; set => snagaPanela = value; }
+
+        
+        public Podaci() { }
     }
 }

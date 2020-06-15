@@ -11,7 +11,7 @@ namespace SHES
     {
         
         static void Main(string[] args)
-        {
+        { 
             while (true)
             {
                 string pom;
@@ -27,7 +27,6 @@ namespace SHES
                 pom = Console.ReadLine();
                 int x = Int32.Parse(pom);
 
-                int proba = 0;
 
                 switch (x)
                 {
@@ -65,10 +64,6 @@ namespace SHES
 
             
         }
-        private static void OnTimedEvent(object source, ElapsedEventArgs e)
-        {
-            Metode m = new Metode();
-            m.merenjeSnageSolarnihPanela();
-        }
+       
 }
 }

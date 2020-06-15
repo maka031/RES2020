@@ -122,13 +122,14 @@ namespace SHES
 
             for(int i = 0; i < p.Count; i++)
             {
-                ukupnaSnaga += p[i].TrenutnaSnaga;
+                using (var db = new SHESContext())
+                {
+                    ukupnaSnaga += p[i].TrenutnaSnaga;
+
+                }
+                Console.WriteLine("Panel:" + p[i].Ime + " Trenutna snaga:" + p[i].TrenutnaSnaga);
             }
             Console.WriteLine("Ukupna snaga svih panela: " + ukupnaSnaga);
-
-            podaci.SnagaPanela = ukupnaSnaga;
-            podaci.StanjeBaterije = Stanje.Punjenje;
-            podaci.CenaED = 0;
 
         }
 
@@ -138,6 +139,8 @@ namespace SHES
 
             SHESContext sc = new SHESContext();
             List<SolarniPanel> paneli = new List<SolarniPanel>();
+
+            
 
             paneli = sc.Paneli.ToList<SolarniPanel>();
 
@@ -152,6 +155,7 @@ namespace SHES
 
             string i = Console.ReadLine();
 
+
             int s = 0;
 
             for(int j = 0; j < paneli.Count; j++)
@@ -161,12 +165,23 @@ namespace SHES
                 else
                 {
                     Console.WriteLine("Panel pronadjen.");
-                    Console.WriteLine("Unesite snagu sunca za odabrani panel:");
+                    Console.WriteLine("Unesite snagu sunca za odabrani panel(u %):");
                     s = Int32.Parse(Console.ReadLine());
 
-                    paneli[j].TrenutnaSnaga = paneli[j].MaxSnaga * s / 100;
 
-                    Console.WriteLine("Panel: " + paneli[j].Ime + " Trenutna snaga:" + paneli[j].TrenutnaSnaga);
+                    using (var db = new SHESContext())
+                    {
+                        paneli[j].TrenutnaSnaga = paneli[j].MaxSnaga * s / 100;
+                        Podaci p = new Podaci();
+                        p.SnagaPanela = paneli[j].TrenutnaSnaga;
+                        db.Podaci.Add(p);
+                        db.SaveChanges();
+                        
+
+                        Console.WriteLine("Panel: " + paneli[j].Ime + " Trenutna snaga:" + paneli[j].TrenutnaSnaga);
+                        
+                    }
+
 
                 }
                 
