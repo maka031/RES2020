@@ -113,7 +113,23 @@ namespace SHES
 
         public void merenjeSnageSolarnihPanela()
         {
-            
+            SHESContext sc = new SHESContext();
+            List<SolarniPanel> p = new List<SolarniPanel>();
+            Podaci podaci = new Podaci();
+
+            p = sc.Paneli.ToList<SolarniPanel>();
+            int ukupnaSnaga = 0;
+
+            for(int i = 0; i < p.Count; i++)
+            {
+                ukupnaSnaga += p[i].TrenutnaSnaga;
+            }
+            Console.WriteLine("Ukupna snaga svih panela: " + ukupnaSnaga);
+
+            podaci.SnagaPanela = ukupnaSnaga;
+            podaci.StanjeBaterije = Stanje.Punjenje;
+            podaci.CenaED = 0;
+
         }
 
         public void snagaSunca()
