@@ -56,18 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Metode.cs" />
-    <Compile Include="Migrations\202006142233518_InitialCreate.cs" />
-    <Compile Include="Migrations\202006142233518_InitialCreate.designer.cs">
-      <DependentUpon>202006142233518_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006142250459_BazaPodataka.cs" />
-    <Compile Include="Migrations\202006142250459_BazaPodataka.designer.cs">
-      <DependentUpon>202006142250459_BazaPodataka.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006142356315_Ukupna snaga.cs" />
-    <Compile Include="Migrations\202006142356315_Ukupna snaga.designer.cs">
-      <DependentUpon>202006142356315_Ukupna snaga.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,17 +70,6 @@
       <Project>{98b0f784-f699-479b-bbd7-7c7f09682abb}</Project>
       <Name>Komponente</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006142233518_InitialCreate.resx">
-      <DependentUpon>202006142233518_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006142250459_BazaPodataka.resx">
-      <DependentUpon>202006142250459_BazaPodataka.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006142356315_Ukupna snaga.resx">
-      <DependentUpon>202006142356315_Ukupna snaga.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

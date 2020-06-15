@@ -126,9 +126,7 @@ namespace SHES
             }
             Console.WriteLine("Ukupna snaga svih panela: " + ukupnaSnaga);
 
-            podaci.SnagaPanela = ukupnaSnaga;
-            podaci.StanjeBaterije = Stanje.Punjenje;
-            podaci.CenaED = 0;
+            
 
         }
 
@@ -151,6 +149,9 @@ namespace SHES
             Console.WriteLine("Unesite ime panela kome zelite da promenite snagu sunca:");
 
             string i = Console.ReadLine();
+            
+
+
 
             int s = 0;
 
